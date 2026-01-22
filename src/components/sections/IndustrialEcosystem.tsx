@@ -1,7 +1,42 @@
 import { useAccessibility } from '@/contexts/AccessibilityContext';
 import { Factory, Building2, Shirt, Truck, FlaskConical, TrendingUp, ArrowRight } from 'lucide-react';
 
-const sectors = [
+const sectorStyles = {
+  msme: {
+    bg: 'bg-sector-msme/10',
+    text: 'text-sector-msme',
+  },
+  parks: {
+    bg: 'bg-sector-parks/10',
+    text: 'text-sector-parks',
+  },
+  textile: {
+    bg: 'bg-sector-textile/10',
+    text: 'text-sector-textile',
+  },
+  logistics: {
+    bg: 'bg-sector-logistics/10',
+    text: 'text-sector-logistics',
+  },
+  rd: {
+    bg: 'bg-sector-rd/10',
+    text: 'text-sector-rd',
+  },
+  investment: {
+    bg: 'bg-sector-investment/10',
+    text: 'text-sector-investment',
+  },
+} as const;
+
+type SectorVariant = keyof typeof sectorStyles;
+
+const sectors: Array<{
+  key: string;
+  icon: typeof Factory;
+  variant: SectorVariant;
+  stats: string;
+  description: string;
+}> = [
   {
     key: 'msmeCluster',
     icon: Factory,
@@ -73,8 +108,8 @@ export function IndustrialEcosystem() {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-lg bg-sector-${sector.variant}/10`}>
-                    <Icon className={`h-6 w-6 text-sector-${sector.variant}`} />
+                  <div className={`p-3 rounded-lg ${sectorStyles[sector.variant].bg}`}>
+                    <Icon className={`h-6 w-6 ${sectorStyles[sector.variant].text}`} />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
