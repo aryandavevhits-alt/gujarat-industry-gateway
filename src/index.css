@@ -2,87 +2,136 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Gujarat Industries Commissionerate - Government Portal Design System */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Government Blue Theme */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Government Deep Blue */
+    --primary: 214 85% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Light Blue */
+    --secondary: 210 40% 94%;
+    --secondary-foreground: 214 85% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Saffron Orange (Government of India) */
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Government Green for Success/Active */
+    --success: 142 70% 35%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Warning - Amber */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 10%;
 
-    --radius: 0.5rem;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 214 85% 35%;
+
+    --radius: 0.375rem;
+
+    /* Government Utility Bar */
+    --utility-bar: 215 30% 20%;
+    --utility-bar-foreground: 0 0% 100%;
+
+    /* Header */
+    --header-bg: 0 0% 100%;
+    --header-border: 214 85% 35%;
+
+    /* Footer */
+    --footer-bg: 215 30% 15%;
+    --footer-foreground: 0 0% 95%;
+
+    /* Sector Colors */
+    --sector-msme: 214 85% 40%;
+    --sector-parks: 142 70% 35%;
+    --sector-textile: 280 60% 45%;
+    --sector-logistics: 24 85% 50%;
+    --sector-rd: 190 80% 35%;
+    --sector-investment: 350 70% 45%;
+
+    /* Dashboard */
+    --dashboard-card: 0 0% 100%;
+    --dashboard-border: 214 30% 85%;
+
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 215 30% 10%;
+    --foreground: 210 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 30% 12%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 30% 12%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 214 85% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 25% 20%;
+    --secondary-foreground: 210 20% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 215 25% 18%;
+    --muted-foreground: 215 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 24 95% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 10%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 25% 25%;
+    --input: 215 25% 25%;
+    --ring: 214 85% 55%;
+
+    --utility-bar: 215 35% 8%;
+    --utility-bar-foreground: 0 0% 95%;
+
+    --header-bg: 215 30% 12%;
+    --header-border: 214 85% 50%;
+
+    --footer-bg: 215 35% 8%;
+    --footer-foreground: 0 0% 90%;
+
+    --dashboard-card: 215 30% 14%;
+    --dashboard-border: 215 25% 25%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -92,6 +141,23 @@ All colors MUST be HSL.
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  /* High Contrast Mode */
+  .high-contrast {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 0%;
+    --accent: 0 0% 0%;
+    --accent-foreground: 0 0% 100%;
+    --border: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+  }
 }
 
 @layer base {
@@ -100,6 +166,134 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Noto Sans', 'Noto Sans Gujarati', sans-serif;
+  }
+
+  /* Font Size Controls */
+  .font-size-small {
+    font-size: 14px;
+  }
+
+  .font-size-normal {
+    font-size: 16px;
+  }
+
+  .font-size-large {
+    font-size: 18px;
+  }
+
+  /* Focus Indicators for Accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+
+  /* Skip Link */
+  .skip-link {
+    @apply absolute -top-10 left-0 bg-primary text-primary-foreground px-4 py-2 z-[100] transition-all;
+  }
+
+  .skip-link:focus {
+    @apply top-0;
+  }
+}
+
+@layer components {
+  /* Government Utility Bar */
+  .utility-bar {
+    @apply bg-[hsl(var(--utility-bar))] text-[hsl(var(--utility-bar-foreground))] text-xs py-1.5;
+  }
+
+  /* Government Header */
+  .gov-header {
+    @apply bg-[hsl(var(--header-bg))] border-b-4 border-[hsl(var(--header-border))];
+  }
+
+  /* Mega Menu */
+  .mega-menu {
+    @apply bg-card shadow-xl border border-border rounded-b-lg;
+  }
+
+  /* Sector Cards */
+  .sector-card {
+    @apply relative overflow-hidden rounded-lg border border-border bg-card p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .sector-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-1 h-full;
+  }
+
+  .sector-card-msme::before { background-color: hsl(var(--sector-msme)); }
+  .sector-card-parks::before { background-color: hsl(var(--sector-parks)); }
+  .sector-card-textile::before { background-color: hsl(var(--sector-textile)); }
+  .sector-card-logistics::before { background-color: hsl(var(--sector-logistics)); }
+  .sector-card-rd::before { background-color: hsl(var(--sector-rd)); }
+  .sector-card-investment::before { background-color: hsl(var(--sector-investment)); }
+
+  /* Dashboard Cards */
+  .dashboard-card {
+    @apply bg-[hsl(var(--dashboard-card))] border border-[hsl(var(--dashboard-border))] rounded-lg p-5 shadow-sm;
+  }
+
+  /* Policy Tabs */
+  .policy-tab {
+    @apply px-4 py-2 text-sm font-medium border-b-2 border-transparent transition-colors;
+  }
+
+  .policy-tab-active {
+    @apply border-primary text-primary;
+  }
+
+  /* Knowledge Card */
+  .knowledge-card {
+    @apply bg-card border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  /* Government Footer */
+  .gov-footer {
+    @apply bg-[hsl(var(--footer-bg))] text-[hsl(var(--footer-foreground))];
+  }
+
+  /* CMS Status Badges */
+  .cms-badge {
+    @apply inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-full;
+  }
+
+  .cms-badge-draft { @apply bg-yellow-100 text-yellow-800; }
+  .cms-badge-review { @apply bg-blue-100 text-blue-800; }
+  .cms-badge-published { @apply bg-green-100 text-green-800; }
+  .cms-badge-archived { @apply bg-gray-100 text-gray-600; }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    @apply flex items-center gap-2 text-sm text-muted-foreground py-3 px-4 bg-muted/50;
+  }
+
+  /* Stats Widget */
+  .stat-widget {
+    @apply flex flex-col items-center justify-center p-4 bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg border border-primary/20;
+  }
+
+  .stat-value {
+    @apply text-3xl font-bold text-primary;
+  }
+
+  .stat-label {
+    @apply text-sm text-muted-foreground mt-1 text-center;
+  }
+
+  /* Notification Badge */
+  .notification-dot {
+    @apply absolute -top-1 -right-1 w-2 h-2 bg-accent rounded-full;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .utility-bar,
+  .gov-footer,
+  .no-print {
+    display: none !important;
   }
 }
