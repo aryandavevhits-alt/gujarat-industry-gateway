@@ -143,16 +143,6 @@ export function Header() {
         </div>
       </nav>
 
-      {/* Breadcrumb */}
-      <div className="breadcrumb" aria-label="Breadcrumb">
-        <nav>
-          <ol className="flex items-center gap-2">
-            <li>
-              <a href="/" className="hover:text-primary">{t('home')}</a>
-            </li>
-          </ol>
-        </nav>
-      </div>
     </header>
   );
 }
